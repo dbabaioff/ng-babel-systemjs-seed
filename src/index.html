@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ES6-related imports -->
+    <script src="lib/es6-module-loader-sans-promises.src.js"></script>
+    <script src="lib/extension-register.js"></script>
+    <script>
+        register(System);
+    </script>
+
+    <!-- Angular 1.x -->
+    <script src="lib/angular.js"></script>
+    
+    <script src="app.js"></script>
+</head>
+<body ng-app="app">
+    <ul ng-controller="ListCtrl as list">
+        <li ng-repeat="item in list.items">{{ item.id }}</li>
+    </ul>
+</body>
+
+<!-- Application bootstrap logic -->
+<script>
+    System.import('app').catch(console.log.bind(console));
+</script>
+
+</html>
