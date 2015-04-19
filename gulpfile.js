@@ -1,5 +1,5 @@
-var gulp = require('gulp');
-var del = require('del');
+var gulp   = require('gulp');
+var del    = require('del');
 var concat = require('gulp-concat');
 
 var PATHS = {
@@ -22,13 +22,12 @@ gulp.task('js', function () {
     var babel = require('gulp-babel');
 
     return gulp.src(PATHS.src.js)
-      .pipe(babel({
-        blacklist: ['strict'],
-        modules: 'system',
-        moduleIds: true
-      }))
-      .pipe(concat('app.js'))
-      .pipe(gulp.dest('dist'));
+        .pipe(babel({
+            modules: 'system',
+            moduleIds: true
+        }))
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('html', function () {
@@ -39,15 +38,15 @@ gulp.task('html', function () {
 gulp.task('libs', function () {
     var size = require('gulp-size');
     return gulp.src(PATHS.lib)
-      .pipe(size({showFiles: true, gzip: true}))
-      .pipe(gulp.dest('dist/lib'));
+        .pipe(size({showFiles: true, gzip: true}))
+        .pipe(gulp.dest('dist/lib'));
 });
 
 gulp.task('play', ['default'], function () {
-    var http = require('http');
-    var connect = require('connect');
+    var http        = require('http');
+    var connect     = require('connect');
     var serveStatic = require('serve-static');
-    var open = require('open');
+    var open        = require('open');
 
     var port = 9000, app;
 
@@ -56,7 +55,7 @@ gulp.task('play', ['default'], function () {
 
     app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
     http.createServer(app).listen(port, function () {
-      open('http://localhost:' + port);
+        open('http://localhost:' + port);
     });
 });
 

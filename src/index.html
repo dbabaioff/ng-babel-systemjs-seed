@@ -12,13 +12,12 @@
 
     <!-- Angular 1.x -->
     <script src="lib/angular.js"></script>
-    
     <script src="app.js"></script>
 </head>
 <body ng-app="app">
-    <ul ng-controller="ListCtrl as list">
-        <li ng-repeat="item in list.items">{{ item.id }}</li>
-    </ul>
+    <div ng-controller="HelloCtrl as hello">
+        <span ng-if="hello.name">Hello, {{ hello.name }}!</span>
+    </div>
 </body>
 
 <!-- Application bootstrap logic -->

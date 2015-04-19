@@ -1,4 +1,4 @@
-import {ListCtrl} from './listCtrl';
+import {HelloCtrl} from './helloCtrl';
 
 angular.module('app', [])
-	.controller('ListCtrl', ListCtrl);
+	.controller('HelloCtrl', HelloCtrl);
