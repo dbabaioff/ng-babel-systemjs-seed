@@ -9,8 +9,7 @@ var PATHS = {
     },
     lib: [
       'node_modules/angular/angular.js',
-      'node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.src.js',
-      'node_modules/systemjs/lib/extension-register.js'
+      'node_modules/systemjs/dist/system-csp-production.src.js'
     ]
 };
 
@@ -48,7 +47,7 @@ gulp.task('play', ['default'], function () {
     var serveStatic = require('serve-static');
     var open        = require('open');
 
-    var port = 9000, app;
+    var port = 9100, app;
 
     gulp.watch(PATHS.src.html, ['html']);
     gulp.watch(PATHS.src.js, ['js']);

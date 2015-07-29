@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "angular": "1.4.3",
-    "es6-module-loader": "0.16.5",
-    "systemjs": "0.16.7"
+    "systemjs": "0.18.4"
   }
 }
