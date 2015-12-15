@@ -1,4 +1,4 @@
-ng-play
+ng-play-systemjs
 ========
 
 This repo is a 1.x version of ng2-play (https://github.com/pkozlowski-opensource/ng2-play)
